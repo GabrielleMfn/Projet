@@ -1,0 +1,51 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train SNTM | Accueil</title>
+    <link rel="stylesheet" href="{% static 'train/accueil.css' %}">
+</head>
+
+<body>
+
+    <header>
+
+        <nav id="nav">
+
+            <a href="/train/accueil/">
+                <img id="Logo" src="{% static 'train/imgT/Logo.png' %}" alt="Logo site">
+            </a>
+
+            <ul>
+                <li><a href="" class="nav-links">Accueil</a></li>
+                <li><a href="http://127.0.0.1:8000/train/liste/" class="nav-links">Liste des Trains</a></li>
+                <li><input type="search" id="searchbar" placeholder="Recherche" />
+
+                    <button id="Loupe">Search</button>
+                </li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <h1 id="title">Nos Trains les empruntés</h1>
+        <button id="plus" onclick="Redirection()">Voir Plus</button>
+
+        <div id="slider">
+            <img id="slide" src="{% static 'train/imgT/RER_A.jpg' %}" alt="Chaussure">
+            <div id="before" onclick="ChangeSlide(-1)">&#10092;</div>
+            <div id="next" onclick="ChangeSlide(1)">&#10093;</div>
+        </div>
+
+    </main>
+
+</body>
+<script src="{% static 'train/js/accueil.js' %}"></script>
+
+</html>

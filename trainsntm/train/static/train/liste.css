@@ -1,0 +1,143 @@
+body {
+    background: #4B79A1;
+    background: -webkit-linear-gradient(to left, #4B79A1, #283E51);
+    background: linear-gradient(to left, #4B79A1, #283E51);
+    color: white;
+}
+
+/* --------Début nav----------- */
+
+header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+header img {
+    width: 250px;
+}
+
+nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 4rem;
+    font-size: large;
+}
+
+
+nav a:hover {
+    text-decoration: underline #ec5678;
+    text-underline-offset: 1rem;
+}
+
+#searchbar {
+    padding: 10px;
+}
+
+#Loupe {
+    background: linear-gradient(to top, #12C2E9, #C471ED, #F64F59);
+    color: white;
+    border: none;
+    padding: 12px;
+}
+
+#Loupe:hover {
+    cursor: pointer;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 2.4em;
+    color: #f2f2f2;
+}
+
+/* ---------Début Tableau-------- */
+
+.container {
+    display: block;
+    text-align: center;
+}
+
+h3 {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    font-size: 1.5em;
+    color: #cecece;
+}
+
+.table {
+    margin: auto;
+    min-width: 300px;
+    max-width: 100%;
+}
+
+.table tr:first-child {
+    border-top: none;
+    background: #428bca;
+    color: #fff;
+}
+
+.table tr {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: #f5f9fc;
+    width: 50px;
+}
+
+td {
+    color: black;
+    padding: 1rem;
+}
+
+th {
+    padding: 0.25rem;
+}
+
+#Plus_tableau {
+    text-decoration: none;
+    color: #4B79A1;
+}
+
+/* --------Détails "Footer"-------- */
+
+#Choix {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+#Choix a {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    text-underline-offset: 1rem;
+
+}
+
+#Choix a:hover {
+    text-decoration: underline #ec5678;
+    text-underline-offset: 1rem;
+}

@@ -1,0 +1,76 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Trains</title>
+    <link rel="stylesheet" href="{% static 'train/liste.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <nav id="nav" class="">
+            <a href="">
+                <img id="Logo" src="{% static 'train/imgT/Logo.png' %}" alt="Logo site">
+            </a>
+            <ul>
+                <li><a href="http://127.0.0.1:8000/train/accueil/" class="nav-links">Accueil</a></li>
+                <li><a href="#" class="nav-links">Trains</a></li>
+                <li><input type="search" id="searchbar" placeholder="Recherche" />
+
+                    <button id="Loupe">Search</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Nom</th>
+                    <th>Horaire Premier/Dernier Trains</th>
+                    <th>Depart </th>
+                    <th>Arrivé </th>
+                    <th>Durée</th>
+                    <th>&nbsp;</th>
+                </tr>
+
+                <!-- Affiche l'intégralité des données dans le tableau grâce à une boucle FOR-->
+                {% for trainActuel in ListeTrains %}
+                <tr>
+                    <td>
+                        {{trainActuel.title}}
+                    </td>
+                    <td>
+                        {{trainActuel.horaire}}
+                    </td>
+                    <td>
+                        {{trainActuel.Depart}}
+                    </td>
+                    <td>
+                        {{trainActuel.Arrive}}
+                    </td>
+                    <td>
+                        {{trainActuel.Temps}} min
+                    </td>
+                    <td>
+                        <a id="Plus_tableau" href="/train/detail/{{trainActuel.trainID}}">Voir Plus</a>
+                    </td>
+                </tr>
+
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+        <section id="Choix">
+            <a href="/train/accueil/">Retourner à l'accueil</a>
+        </section>
+</body>
+
+</html>

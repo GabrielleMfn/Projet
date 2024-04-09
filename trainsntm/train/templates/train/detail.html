@@ -1,0 +1,81 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details des Trains</title>
+    <link rel="stylesheet" href="{% static 'train/detail.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <nav id="nav" class="">
+            <a href="/train/accueil/">
+                <img id="Logo" src="{% static 'train/imgT/Logo.png' %}" alt="Logo site">
+            </a>
+            <ul>
+                <li><a href="/train/accueil/" class="nav-links">Accueil</a></li>
+                <li><a href="/train/liste/" class="nav-links">Listes des Trains</a></li>
+                <li><input type="search" id="searchbar" placeholder="Recherche" />
+
+                    <button id="Loupe">Search</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="imgPlans">
+        <h1>{{ title }}</h1>
+    <img id="plans" src="{% static '/train/imgH/plan-rer-a.png' %}" alt="Plan Trains">
+    </div>
+
+
+    <div class="container">
+        <table class="table">
+            <tbody>
+                <!-- Entête du Tableau -->
+                <tr>
+                    <th>Nom</th>
+                    <th>Horaire Premier/Dernier Trains</th>
+                    <th>Depart </th>
+                    <th>Arrivé </th>
+                    <th>Durée</th>
+                </tr>
+
+                <!-- Récupération des données grâce au accolade -->
+                <tr>
+                    <td>
+                        {{title}}
+                    </td>
+                    <td>
+                        {{horaire}}
+                    </td>
+                    <td>
+                        {{Depart}}
+                    </td>
+                    <td>
+                        {{Arrive}}
+                    </td>
+                    <td>
+                        {{Temps}} min
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+        <!-- Passe au détail suivant -->
+        <button id="Suivant"><a href="/train/detail/{{nextID}}">Suivant</a></button>
+
+        <section id="Choix">
+            <a href="/train/accueil/">Retourner à l'accueil</a>
+            <a href="/train/liste/">Liste des trains</a>
+        </section>
+
+</body>
+<script src="{% static 'train/js/detail.js' %}"></script>
+
+</html>
